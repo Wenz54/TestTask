@@ -36,23 +36,6 @@
 - Build Tool: Vite
 - Deployment: Vercel
 
-## 🗂 Файловая структура
-src/
-├── components/      # UI-компоненты
-│   ├── AssetForm/   # Форма добавления актива
-│   ├── AssetList/   # Список активов
-│   └── AssetRow/    # Строка актива
-├── store/           # Redux store
-│   ├── portfolioSlice.ts
-│   └── store.ts
-├── hooks/           # Кастомные хуки
-│   └── useWebSocket.ts
-├── utils/           # Вспомогательные функции
-│   ├── binance.ts   # WebSocket логика
-│   └── storage.ts   # Локальное хранилище
-├── styles/          # Глобальные стили
-└── types/           # Типы TypeScript
-
 ## 🛠 Установка и запуск
 1. Клонируйте репозиторий:
 ```
