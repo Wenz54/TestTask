@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #root {
+    min-height: 100vh;
+    padding: 2rem;
+    font-family: 'Arial', sans-serif;
+  }
+  body {
+    background: linear-gradient(135deg, #FDE2F3 0%, #E5BEEC 50%, #917FB3 100%);
+    min-height: 100vh;
+    padding: 2rem;
+  }

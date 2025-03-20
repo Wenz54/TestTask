@@ -1,0 +1,126 @@
+@import 'variables';
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: $white;
+  border-radius: 16px;
+  box-shadow: $shadow;
+}
+
+.title {
+  color: $primary-color;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.listHeader {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  background: lighten($primary-color, 65%);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: $primary-color;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  background: $white;
+  border-radius: 8px;
+  transition: $transition-fast;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: $secondary-color;
+    opacity: 0;
+    transition: $transition-fast;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-hover;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.positive {
+  color: $positive;
+  font-weight: 600;
+  &::after {
+    content: '↑';
+    margin-left: 4px;
+  }
+}
+
+.negative {
+  color: $negative;
+  font-weight: 600;
+  &::after {
+    content: '↓';
+    margin-left: 4px;
+  }
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: $primary-color;
+  position: relative;
+  
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid $secondary-color;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+    margin-left: 1rem;
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .listHeader,
+  .row {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.5rem;
+  }
+
+  .listHeader div:nth-child(n+3),
+  .row div:nth-child(n+3) {
+    grid-column: span 2;
+  }
+}
